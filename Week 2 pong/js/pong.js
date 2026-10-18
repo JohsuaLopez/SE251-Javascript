@@ -14,6 +14,11 @@ p1.w = 20
 p1.h = 150
 p1.x = 0 + p1.w/2
 
+let p2 = new Box();
+p2.w = 20
+p2.h = 150
+p2.x = c.width - p2.w/2
+
 // Ball setup
 let ball = new Box();
 ball.w = 20
@@ -88,4 +93,5 @@ function main()
     // Draw the objects
     p1.draw()
     ball.draw()
+    p2.draw()
 }
