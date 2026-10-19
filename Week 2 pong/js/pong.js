@@ -68,6 +68,14 @@ function main()
     if (p1.y > c.height-p1.h/2)
     {
         p1.y = c.height-p1.h/2
+    } 
+    // p2 boundary collision
+    if (p2.y < p2.h / 2) {
+        p2.y = p2.h / 2;
+    }
+
+    if (p2.y > c.height - p2.h / 2) {
+        p2.y = c.height - p2.h / 2;
     }
 
     // Ball collision 
@@ -78,8 +86,8 @@ function main()
     }
     if (ball.x > c.width)
     {
-        ball.x = c.width
-        ball.vx = -ball.vx
+        ball.x = c.width / 2;
+        ball.y = c.height / 2;
     }
     if (ball.y < 0)
     {
@@ -103,7 +111,7 @@ function main()
     if (ball.collide(p2))
     {
         ball.x = p2.x - p2.w/2 - ball.w/2
-        ball.vx = -ball.vx;
+        ball.vx = -Math.abs(ball.vx);
     }
 
     // Draw the objects
