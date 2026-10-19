@@ -42,11 +42,20 @@ function main()
     {
         p1.vy += p1.force
     }
+    if (keys["ArrowUp"]) {
+        p2.vy -= p2.force;
+    }
+
+    if (keys["ArrowDown"]) {
+        p2.vy += p2.force;
+    }
 
     // Applies friction
     p1.vy *= fy
+    p2.vy *= fy
     // Player movement
     p1.move();
+    p2.move();
 
     // Ball movement
     ball.move()
@@ -87,6 +96,13 @@ function main()
     if (ball.collide(p1))
     {
         ball.x = p1.x + p1.w/2 + ball.w/2
+        ball.vx = -ball.vx;
+    }
+    
+    // p2 with ball collision
+    if (ball.collide(p2))
+    {
+        ball.x = p2.x - p2.w/2 - ball.w/2
         ball.vx = -ball.vx;
     }
 
