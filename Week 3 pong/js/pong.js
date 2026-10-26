@@ -97,12 +97,14 @@ function main()
     if (ball.x < 0)
     {
         players[1].score += 1;
+        console.log(`${players[0].score} | ${players[1].score}`);
         ball.x = c.width/2
         ball.y = c.height/2
     }
     if (ball.x > c.width)
     {
         players[0].score += 1;
+        console.log(`${players[0].score} | ${players[1].score}`);
         ball.x = c.width / 2;
         ball.y = c.height / 2;
     }
@@ -135,4 +137,6 @@ function main()
     pads[0].draw()
     ball.draw()
     pads[1].draw()
+
+    
 }
