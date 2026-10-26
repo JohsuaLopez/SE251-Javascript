@@ -119,3 +119,14 @@ function main()
     ball.draw()
     p2.draw()
 }
+// Create an empty array to hold the players
+let players = [];
+
+// Create Player 1 at index 0
+players[0] = new Player("Player 1", new Box());
+
+// Create Player 2 at index 1
+players[1] = new Player("Player 2", new Box());
+
+// Display the players array in the console
+console.log(players);
