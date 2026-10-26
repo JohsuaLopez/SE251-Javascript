@@ -44,11 +44,6 @@ ball.color = `black`
 
 const scoreDivs = document.querySelectorAll(`#score div`)
 
-for (let i=0; i < scoreDivs.length; i++)
-{
-    scoreDivs[i].innerText = players[i].score
-}
-
 
 function main()
 {
@@ -146,5 +141,8 @@ function main()
     ball.draw()
     pads[1].draw()
 
-    
+    for (let i=0; i < scoreDivs.length; i++)
+    {
+        scoreDivs[i].innerText = players[i].score
+    }
 }
