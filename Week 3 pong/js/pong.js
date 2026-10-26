@@ -32,6 +32,7 @@ pads[1].w = 20;
 pads[1].h = 150;
 pads[1].x = c.width - pads[1].w / 2;
 
+console.log(players);
 
 // Ball setup
 let ball = new Box();
