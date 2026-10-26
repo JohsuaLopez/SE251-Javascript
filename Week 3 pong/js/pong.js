@@ -42,6 +42,14 @@ ball.vx = -2
 ball.vy = -2
 ball.color = `black`
 
+const scoreDivs = document.querySelectorAll(`#score div`)
+
+for (let i=0; i < scoreDivs.length; i++)
+{
+    scoreDivs[i].innerText = players[i].score
+}
+
+
 function main()
 {
     // Erases the canvas
