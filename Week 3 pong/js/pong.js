@@ -96,11 +96,13 @@ function main()
     // Ball collision 
     if (ball.x < 0)
     {
+        players[1].score += 1;
         ball.x = c.width/2
         ball.y = c.height/2
     }
     if (ball.x > c.width)
     {
+        players[0].score += 1;
         ball.x = c.width / 2;
         ball.y = c.height / 2;
     }
