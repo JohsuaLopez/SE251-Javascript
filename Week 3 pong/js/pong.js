@@ -8,16 +8,30 @@ let timer = setInterval(main, 1000/60)
 // Global friction variable
 let fy = .97
 
-// Player 1 (p1) setup
-let p1 = new Box();
-p1.w = 20
-p1.h = 150
-p1.x = 0 + p1.w/2
+// Create an empty array to hold the players
+let players = [];
 
-let p2 = new Box();
-p2.w = 20
-p2.h = 150
-p2.x = c.width - p2.w/2
+// Create Player 1 at index 0
+players[0] = new Player("Player 1", new Box());
+
+// Create Player 2 at index 1
+players[1] = new Player("Player 2", new Box());
+
+let pads = [];
+
+// Assign the pads of the players to the pads array
+pads[0] = players[0].pad;
+pads[1] = players[1].pad;
+
+// Set the properties of the pads
+pads[0].w = 20;
+pads[0].h = 150;
+pads[0].x = 0 + pads[0].w / 2;
+
+pads[1].w = 20;
+pads[1].h = 150;
+pads[1].x = c.width - pads[1].w / 2;
+
 
 // Ball setup
 let ball = new Box();
