@@ -87,24 +87,7 @@ function main()
             pads[i].y = c.height - pads[i].h / 2;
         }
     }
-    // p1 collision
-    if (pads[0].y < 0+pads[0].h/2)
-    {
-        pads[0].y = 0+pads[0].h/2
-    }
-    if (pads[0].y > c.height-pads[0].h/2)
-    {
-        pads[0].y = c.height-pads[0].h/2
-    } 
-    // p2 boundary collision
-    if (pads[1].y < pads[1].h / 2) {
-        pads[1].y = pads[1].h / 2;
-    }
-
-    if (pads[1].y > c.height - pads[1].h / 2) {
-        pads[1].y = c.height - pads[1].h / 2;
-    }
-
+    
     // Ball collision 
     if (ball.x < 0)
     {
@@ -131,24 +114,28 @@ function main()
         ball.vy = -ball.vy       
     }
 
-    // p1 with ball collision
-    if (ball.collide(pads[0]))
-    {
-        ball.x = pads[0].x + pads[0].w/2 + ball.w/2
-        ball.vx = -ball.vx;
-    }
-    
-    // p2 with ball collision
-    if (ball.collide(pads[1]))
-    {
-        ball.x = pads[1].x - pads[1].w/2 - ball.w/2
-        ball.vx = -Math.abs(ball.vx);
+    for (let i = 0; i < pads.length; i++) {
+        if (ball.collide(pads[i])) {
+            
+        
+            if (i === 0) {
+                ball.x = pads[i].x + pads[i].w / 2 + ball.w / 2;
+                ball.vx = Math.abs(ball.vx);
+            } else {
+                ball.x = pads[i].x - pads[i].w / 2 - ball.w / 2;
+                ball.vx = -Math.abs(ball.vx);
+            }
+        }
+        
     }
 
     // Draw the objects
-    pads[0].draw()
+    for (let i = 0; i < pads.length; i++) {
+        pads[i].draw();
+    }
+    
     ball.draw()
-    pads[1].draw()
+    
 
     for (let i=0; i < scoreDivs.length; i++)
     {
