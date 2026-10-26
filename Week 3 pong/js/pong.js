@@ -68,16 +68,25 @@ function main()
         pads[1].vy += pads[1].force;
     }
 
-    // Applies friction
-    pads[0].vy *= fy
-    pads[1].vy *= fy
-    // Player movement
-    pads[0].move();
-    pads[1].move();
+    for (let i = 0; i < pads.length; i++) {
+        pads[i].vy *= fy;
+        pads[i].move();
+    }
+    
 
     // Ball movement
     ball.move()
 
+    for (let i=0; i<pads.length; i++)
+    {
+        if (pads[i].y < pads[i].h / 2)
+        {
+            pads[i].y = pads[i].h / 2;
+        }
+        if (pads[i].y > c.height - pads[i].h / 2) {
+            pads[i].y = c.height - pads[i].h / 2;
+        }
+    }
     // p1 collision
     if (pads[0].y < 0+pads[0].h/2)
     {
