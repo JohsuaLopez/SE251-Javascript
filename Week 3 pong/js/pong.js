@@ -133,28 +133,3 @@ function main()
     ball.draw()
     pads[1].draw()
 }
-// Create an empty array to hold the players
-let players = [];
-
-// Create Player 1 at index 0
-players[0] = new Player("Player 1", new Box());
-
-// Create Player 2 at index 1
-players[1] = new Player("Player 2", new Box());
-
-let pads = [];
-
-// Assign the pads of the players to the pads array
-pads[0] = players[0].pad;
-pads[1] = players[1].pad;
-
-// Set the properties of the pads
-pads[0].w = 20;
-pads[0].h = 150;
-pads[0].x = 0 + pads[0].w / 2;
-
-pads[1].w = 20;
-pads[1].h = 150;
-pads[1].x = c.width - pads[1].w / 2;
-// Display the players array in the console
-console.log(players);
