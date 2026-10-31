@@ -21,8 +21,22 @@
     <script>
         const colorButton = document.querySelector("#colorBtn");
 
-        element.addEventListener("click", function() {
+        colorButton.addEventListener("click", function() {
             console.log("Button Clicked");
+
+            colorButton.style.backgroundColor = "red";
+        });
+
+        colorButton.addEventListener("mouseover", function() {
+            console.log("mouse on button");
+
+            colorButton.style.backgroundColor = "blue";
+        });
+        
+        colorButton.addEventListener("mouseout", function() {
+            console.log("mouse off button");
+
+            colorButton.style.backgroundColor = "gray";
         });
 
     </script>
