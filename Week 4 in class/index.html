@@ -39,5 +39,42 @@
             colorButton.style.backgroundColor = "gray";
         });
 
+
+        const headingIT = document.querySelector("#header2");
+
+        headingIT.addEventListener("click", function() {
+            
+            headingIT.style.color = "green"
+
+        });
+
+        headingIT.addEventListener("mouseover", function() {
+            
+            headingIT.style.color = "orange"
+
+        });
+
+         headingIT.addEventListener("mouseout", function() {
+            
+            headingIT.style.color = "gray"
+
+        });
+
+        const paraG = document.querySelector("#paragraph");
+
+        paraG.addEventListener("click", function() {
+
+            paraG.innerText = "lebron the goat"
+        });
+
+        paraG.addEventListener("mouseover", function() {
+
+            paraG.innerText = "Jesus is Lord"
+        });
+
+        paraG.addEventListener("mouseout", function() {
+
+            paraG.innerText = "Interactive paragraph"
+        });
     </script>
 </body>
