@@ -53,7 +53,7 @@ fillInputs.forEach(function(input, i) {
         .Show the player's key in the output div 
 -----------*/
 // Task 3 - Customizable Up Keys
-
+/*---
 // Select both players' Up key inputs
 const upInputs = document.querySelectorAll("#options .u");
 
@@ -92,7 +92,7 @@ for (let i = 0; i < upInputs.length; i++) {
         currentState = "pause";
     });
 }   
-
+---*/
 // down and straight 
 
 function setupKeyInputs(className, keyName) {
@@ -122,6 +122,6 @@ function setupKeyInputs(className, keyName) {
     }
 }
 
-
+setupKeyInputs("u", "u");
 setupKeyInputs("d", "d");
 setupKeyInputs("s", "s");
