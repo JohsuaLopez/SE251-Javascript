@@ -76,5 +76,40 @@
 
             paraG.innerText = "Interactive paragraph"
         });
+
+        const textbox = document.querySelector("#username");
+
+        textbox.addEventListener("focus", function() {
+            
+            textbox.style.width = "300px";
+        });
+
+        textbox.addEventListener("blur", function() {
+            
+            textbox.style.width = "200px";
+        });
+
+        textbox.addEventListener("input", function() {
+            
+            textbox.value = textbox.value.toUpperCase();
+        });
+
+        const place = document.querySelector("#placeholderBTN");
+
+        place.addEventListener("dblclick", function() {
+            
+            place.style.backgroundColor = "gold";
+        });
+
+        place.addEventListener("mouseleave", function() {
+            
+            place.style.backgroundColor = "gray";
+        });
+
+        place.addEventListener("click", function() {
+            
+            place.innerText = "You clicked this button"
+        });
+
     </script>
 </body>
