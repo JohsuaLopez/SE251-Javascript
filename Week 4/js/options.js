@@ -3,6 +3,14 @@
     . on click
     . show or hide the `.sides` div
 ---------*/
+const optionsHeading = document.querySelector("#options h2");
+const optionsSides = document.querySelector("#options .sides");
+
+optionsHeading.addEventListener("click", function(){
+    optionsSides.classList.toggle("hidden");
+});
+
+
 
 /*---------
     Program the two fill inputs to do the following:
