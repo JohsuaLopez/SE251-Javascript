@@ -92,3 +92,36 @@ for (let i = 0; i < upInputs.length; i++) {
         currentState = "pause";
     });
 }   
+
+// down and straight 
+
+function setupKeyInputs(className, keyName) {
+    const inputs = document.querySelectorAll("#options ." + className);
+
+    for (let i = 0; i < inputs.length; i++) {
+
+        // Display the current key
+        inputs[i].value = player[i].keys[keyName];
+        inputs[i].nextElementSibling.innerText = player[i].keys[keyName];
+
+        // Pause when selecting the input
+        inputs[i].addEventListener("focus", function() {
+            currentState = "pause";
+        });
+
+        // Assign a new key
+        inputs[i].addEventListener("keydown", function(e) {
+            e.preventDefault();
+
+            if (e.key === "Escape") return;
+
+            player[i].keys[keyName] = e.key;
+            inputs[i].value = e.key;
+            inputs[i].nextElementSibling.innerText = e.key;
+        });
+    }
+}
+
+
+setupKeyInputs("d", "d");
+setupKeyInputs("s", "s");
