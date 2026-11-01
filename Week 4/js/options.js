@@ -88,7 +88,7 @@ for (let i = 0; i < upInputs.length; i++) {
     });
     
     
-    inputs[i].addEventListener("focus", function() {
+    upInputs[i].addEventListener("focus", function() {
         currentState = "pause";
     });
 }   
