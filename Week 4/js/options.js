@@ -86,11 +86,9 @@ for (let i = 0; i < upInputs.length; i++) {
         
         upInputs[i].nextElementSibling.innerHTML = player[i].keys.u;
     });
-
     
-    upInputs[i].addEventListener("focus", function() {
+    
+    inputs[i].addEventListener("focus", function() {
         currentState = "pause";
     });
-}
-
-
+}   
