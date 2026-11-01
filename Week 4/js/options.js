@@ -21,7 +21,29 @@ optionsHeading.addEventListener("click", function(){
         . Show the fill's hex code in the output div 
 
 -----------*/
+// Select both fill color inputs
+const fillInputs = document.querySelectorAll("#options .fill");
 
+
+fillInputs.forEach(function(input, i) {
+
+   
+    input.value = player[i].fill;
+    input.nextElementSibling.innerHTML = player[i].fill;
+
+    // Update the color when the user selects a new one
+    input.addEventListener("input", function(e) {
+
+        
+        player[i].fill = e.target.value;
+
+        
+        player[i].pad.fill = player[i].fill;
+
+        // Display the new hex code
+        input.nextElementSibling.innerHTML = player[i].fill;
+    });
+});
 /*---------
     Program the six key inputs to do the following:
     . Display the correct key names for each player   
