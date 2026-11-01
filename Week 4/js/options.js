@@ -85,3 +85,31 @@ function setupKeyInputs(className, keyName) {
 setupKeyInputs("u", "u");
 setupKeyInputs("d", "d");
 setupKeyInputs("s", "s");
+
+
+//ball speed control
+
+const ballSpeedInput = document.querySelector("#ballSpeed");
+const ballSpeedOutput = document.querySelector("#ballSpeedOutput");
+
+// Update the speed when the slider moves
+ballSpeedInput.addEventListener("input", function() {
+
+    // Convert the input value into a number
+    const speed = Number(ballSpeedInput.value);
+
+    // Update both players' ball bounce power
+    for (let i = 0; i < player.length; i++) {
+        player[i].power = speed;
+    }
+
+    // Update the moving ball immediately
+    ball.vx = Math.sign(ball.vx || -1) * speed;
+
+    if (ball.vy !== 0) {
+        ball.vy = Math.sign(ball.vy) * speed;
+    }
+
+    // Display the selected speed
+    ballSpeedOutput.innerText = speed;
+});
