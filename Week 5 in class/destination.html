@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destination</title>
+  </head>
+ 
+  <body>
+    <h1>Submitted Information</h1>
+
+    <p>First Name: <span id="displayFirstName"></span></p>
+    <p>Last Name: <span id="displayLastName"></span></p>
+    <p>Email: <span id="displayEmail"></span></p>
+    <p>Age: <span id="displayAge"></span></p>
+
+    <script>
+    const queryString = window.location.search;
+    const params = new URLSearchParams(queryString);
+
+    const contact = {
+        firstname: params.get("firstname"),
+        lastname: params.get("lastname"),
+        email: params.get("email"),
+        age: params.get("age")
+    };
+
+    document.getElementById("displayFirstName").textContent = contact.firstname;
+    document.getElementById("displayLastName").textContent = contact.lastname;
+    document.getElementById("displayEmail").textContent = contact.email;
+    document.getElementById("displayAge").textContent = contact.age;
+  </script>
+  </body>
+</html>
