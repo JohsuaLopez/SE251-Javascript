@@ -75,7 +75,7 @@ const bulkDelete = document.querySelector('#delete');
 
 const selectAll = document.querySelector('#all');
 
-const Confirm = document.querySelector('#confirm');
+const confirm1 = document.querySelector('#confirm');
 
 bulkDelete.addEventListener("click", function(){
     
@@ -83,7 +83,7 @@ bulkDelete.addEventListener("click", function(){
     
     selectAll.classList.toggle("hidden");
 
-    Confirm.classList.toggle("hidden");
+    confirm1.classList.toggle("hidden");
 
     inputs.forEach(function(i){
         i.classList.toggle("hidden");
@@ -101,7 +101,27 @@ selectAll.addEventListener("click", function(){
     });
 });
 
+confirm1.addEventListener("click", function(){
 
+    let checked2 = document.querySelectorAll(".post input:checked")
+
+    checked2.forEach(function(c){
+
+        c.closest(".post").remove();
+    })
+
+    selectAll.classList.add("hidden")
+
+    confirm1.classList.add("hidden")
+
+    let hide = document.querySelectorAll(".post input")
+
+    hide.forEach(function(h){
+
+        h.classList.add("hidden")
+    });
+    savePosts();
+});
 
 
 
