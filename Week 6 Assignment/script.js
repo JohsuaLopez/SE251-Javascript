@@ -71,14 +71,33 @@ document.getElementById(`add`).addEventListener(`click`, function(e) {
 
 });
 
-const bulkDelete = document.querySelector('#delete')
+const bulkDelete = document.querySelector('#delete');
+
+const selectAll = document.querySelector('#all');
+
+const Confirm = document.querySelector('#confirm');
 
 bulkDelete.addEventListener("click", function(){
     
     let inputs = document.querySelectorAll(".post input");
     
+    selectAll.classList.toggle("hidden");
+
+    Confirm.classList.toggle("hidden");
+
     inputs.forEach(function(i){
         i.classList.toggle("hidden");
+        
+    });
+});
+
+selectAll.addEventListener("click", function(){
+    
+    let checked = document.querySelectorAll(".post input");
+    
+    checked.forEach(function(b){
+
+        b.checked = true;
     });
 });
 
