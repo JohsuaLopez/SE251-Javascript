@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W6 Local Storage Exercise</title>
+    <style>
+        /* Basic Styles */
+        body { 
+            font-family: sans-serif; 
+            transition: background 0.3s; 
+            padding: 2rem; 
+        }
+        .dark-theme { 
+            background-color: #1a1a1a; 
+            color: #ffffff; 
+        }
+        button { 
+            padding: 10px 20px; 
+            font-size: 1rem; 
+            cursor: pointer; 
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Local Storage Exercise</h1>
+    <p>Toggle the theme and refresh the page to test if it persists.</p>
+    <button id="theme-toggle">Switch Theme</button>
+
+    <script>
+        
+        /*
+            As a reminder, your implementation should include the use of 3 Local Storage methods:
+            - localStorage.getItem();
+            - localStorage.setItem();
+            - localStorage.removeItem();
+        */
+
+        const themeButton = document.querySelector('#theme-toggle');
+
+        const savedTheme = localStorage.getItem("savedTheme");
+
+        if (savedTheme === "dark") {
+            document.body.classList.add("dark-theme")
+        }
+
+
+
+
+    </script>
+    
+</body>
+</html>
